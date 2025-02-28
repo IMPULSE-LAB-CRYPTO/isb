@@ -1,4 +1,17 @@
-text = (
+import argparse
+
+def parsing() -> argparse.Namespace:
+    """
+    Парсинг аргументов командной строки
+    """
+    parser = argparse.ArgumentParser(description="Шифрование текста с использованием шифра Виженера")
+    parser.add_argument("_text", type=str, help="Текст для шифрования")
+    parser.add_argument("_key", type=str, help="Ключ для шифрования")
+    args = parser.parse_args()
+    return args
+
+
+text_1 = (
     "Посол Франции в Риме Блез де Виженер, познакомившись с трудами Тритемия, Белазо, Кардано, Порта, Альберти,"
     "также увлёкся криптографией. В 1585 году он написал «Трактат о шифрах», в котором излагаются основы криптографии. "
     "В этом труде он замечает: «Все вещи в мире представляют собой шифр. Вся природа является просто шифром и "
@@ -6,10 +19,16 @@ text = (
     "вероятностей, а в XX веке и Норбертом Винером — «отцом кибернетики». По сути дела Виженер объединил подходы "
     "Тритемия, Беллазо, Порта к шифрованию открытых текстов, по существу не внеся в них ничего оригинального."
 )
+key_1 = "ибас"
 
 
-key = "ибас"
 def shifr(text, key):
+    """
+    Функция кодирования текста при помощи метода Вижинера
+    :param text: шифруемый текст
+    :param key: ключ шифрования
+    :return: зашифрованный текст
+    """
     shifr_text = []
     key_len = len(key)
 
@@ -28,11 +47,20 @@ def shifr(text, key):
             else:
                 shifr_text.append(chr((int_text[i] + shift - 1072) % 32 + 1072))
         else:
-            shifr_text.append(text[i])  # Не изменяем не-буквенные символы
+            shifr_text.append(text[i])  # Не изменяем небуквенные символы
 
     return ''.join(shifr_text)
 
+def main():
+    args = parsing()
+    text = args._text
+    key = args._key
 
-shifr_text = shifr(text, key)
-print("Зашифрованный текст: ")
-print(shifr_text)
+    # Шифруем текст
+    shifr_text = shifr(text, key)
+    print("Зашифрованный текст: ")
+    print(shifr_text)
+
+if __name__ == "__main__":
+    main()
+
