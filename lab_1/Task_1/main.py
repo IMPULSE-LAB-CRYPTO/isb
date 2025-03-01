@@ -29,25 +29,33 @@ def shifr(text, key):
     :param key: ключ шифрования
     :return: зашифрованный текст
     """
+    key = key.lower()
     shifr_text = []
     key_len = len(key)
 
     #ASCII-код
+    #ord("А") = 1040
+    #ord("Я") = 1071
+    #ord("а") = 1072
+    #ord("я") = 1103
+
     int_key = [ord(i) for i in key]
     int_text = [ord(i) for i in text]
 
-    #растянуть ключ на длину текста (пока не нужно)
+    #растянуть ключ на длину текста (не нужно)
     #key_repeat = (key*(---))
 
     for i in range (len(int_text)):
         if text[i].isalpha():
-            shift = int_key[i % key_len] % 32  # Учитываем только буквы
+            #для ключей больше 32 символов необходимо %32 дабы зациклить
             if text[i].isupper():
+                shift = (int_key[i % key_len] - 1040) % 32
                 shifr_text.append(chr((int_text[i] + shift - 1040) % 32 + 1040))
             else:
+                shift = (int_key[i % key_len] - 1072) % 32
                 shifr_text.append(chr((int_text[i] + shift - 1072) % 32 + 1072))
         else:
-            shifr_text.append(text[i])  # Не изменяем небуквенные символы
+            shifr_text.append(text[i])
 
     return ''.join(shifr_text)
 
