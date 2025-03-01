@@ -59,6 +59,15 @@ def shifr(text, key):
 
     return ''.join(shifr_text)
 
+def save_to_file(filename, data):
+    """
+    Сохраняет данные в файл
+    :param filename: имя файла
+    :param data: данные для сохранения
+    """
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(data)
+
 def main():
     args = parsing()
     text = args._text
@@ -69,6 +78,12 @@ def main():
     print("Зашифрованный текст: ")
     print(shifr_text)
 
+    # Сохраняем исходный текст, зашифрованный текст и ключ в файлы
+    save_to_file("original_text.txt", text)
+    save_to_file("shifr_text.txt", shifr_text)
+    save_to_file("key.txt", key)
+
+    print("Данные сохранены в файлы: original_text.txt, encrypted_text.txt, key.txt")
 if __name__ == "__main__":
     main()
 
