@@ -107,11 +107,6 @@ def main():
 
     print("______________________________________________________________\n\nПрототип 1:\n")
 
-    #text = replace_chars(text, "Е", "о")
-    #text = replace_chars(text, "Д", "н")
-    #text = replace_chars(text, "Ч", "е")
-    #text = replace_chars(text, " ", "и")
-    #text = replace_chars(text, "Н", "л")
 
     text = replace_chars(text, " ", "и") #
     text = replace_chars(text, "Е", "о") #
@@ -119,19 +114,37 @@ def main():
     text = replace_chars(text, "Ч", "а") #
 
     text = replace_chars(text, "Ы", "е") #
-    #text = replace_chars(text, "Ц", "с")
-    #text = replace_chars(text, "Й", "т")
-    #text = replace_chars(text, "Н", "р")
+    text = replace_chars(text, "Ц", "р")
+    text = replace_chars(text, "Й", "т")
+    text = replace_chars(text, "Н", "л")
 
-    #text = replace_chars(text, "З", "в")
-    #text = replace_chars(text, "Ж", "д")
+    text = replace_chars(text, "З", "м")
+    text = replace_chars(text, "Ж", "ь")
     #text = replace_chars(text, "И", "л")
     text = replace_chars(text, "Б", "к") #
 
-    #text = replace_chars(text, "Я", "я")
+    text = replace_chars(text, "Я", "з")
     #text = replace_chars(text, "Щ", "ц")
     #text = replace_chars(text, "Э", "п")
-    #text = replace_chars(text, "Т", "з")
+    text = replace_chars(text, "Т", "п")
+
+    #text = replace_chars(text, "К", "ц")
+    #text = replace_chars(text, "С", "п")
+    #text = replace_chars(text, "Ф", "з")
+    #text = replace_chars(text, "Ъ", "ц")
+
+    text = replace_chars(text, "Ь", "ж")
+    #text = replace_chars(text, "Л", "п")
+    text = replace_chars(text, "М", "х")
+    #text = replace_chars(text, "У", "ц")
+
+    #text = replace_chars(text, "Ю", "ц")
+    #text = replace_chars(text, "О", "п")
+    text = replace_chars(text, "Г", "ч")
+    #text = replace_chars(text, "П", "ц")
+
+    # text = replace_chars(text, "А", "з")
+    # text = replace_chars(text, "В", "ц")
 
 
 
