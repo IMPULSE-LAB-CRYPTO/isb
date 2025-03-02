@@ -124,27 +124,27 @@ def main():
     text = replace_chars(text, "Б", "к") #
 
     text = replace_chars(text, "Я", "з")
-    #text = replace_chars(text, "Щ", "ц")
+    text = replace_chars(text, "Щ", "в")
     text = replace_chars(text, "Э", "ы")
     text = replace_chars(text, "Т", "п")
 
     text = replace_chars(text, "К", "у")
     text = replace_chars(text, "С", "д")
-    #text = replace_chars(text, "Ф", "з")
+    text = replace_chars(text, "Ф", "я")
     text = replace_chars(text, "Ъ", "г")
 
     text = replace_chars(text, "Ь", "ж")
-    #text = replace_chars(text, "Л", "п")
+    text = replace_chars(text, "Л", "ф")
     text = replace_chars(text, "М", "х")
-    #text = replace_chars(text, "У", "ц")
+    text = replace_chars(text, "У", "ю")
 
     text = replace_chars(text, "Ю", "ц")
     text = replace_chars(text, "О", "ш")
     text = replace_chars(text, "Г", "ч")
-    #text = replace_chars(text, "П", "ц")
+    text = replace_chars(text, "П", "щ")
 
-    # text = replace_chars(text, "А", "з")
-    # text = replace_chars(text, "В", "ц")
+    text = replace_chars(text, "А", "й")
+    text = replace_chars(text, "В", "э")
 
 
 
