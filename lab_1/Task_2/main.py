@@ -61,9 +61,13 @@ def calculate_char_percentages(text):
 
 
 def main():
-
     text = task_text
+
+    #Зашифрованный текст
+    print("\nЗашифрованный текст:\n")
     print(text)
+
+    #Свод к единому алфавиту для удобства
     for i in range(len(text)):
         if text[i] == "8":
             text = text.replace("8", "В")
@@ -89,24 +93,21 @@ def main():
             text = text.replace("y", "Ш")
         elif text[i] == ">":
             text = text.replace(">", "Э")
-    print("\n")
+    print("______________________________________________________________\n\nСвод к единому алфавиту:\n")
     print(text)
 
-    #Вывод процентного соотношения
+    #Процентное соотношения
     percent_dict = calculate_char_percentages(text)
 
-    #Сортировка ключей
-    print("\n\n\n")
+    #Сортировка значений ключей
+    print("\n______________________________________________________________\n\nСловарь процентного содержания букв зашифрованного текста:\n")
     sorted_dict = {}
     for key in sorted(percent_dict, key=percent_dict.get, reverse=True):
         sorted_dict[key] = percent_dict[key]
     print(sorted_dict)
 
 
-
-
-    print("______________________________________________________________\n\nПрототип 1:\n")
-
+    print("\n______________________________________________________________\n\nДешифрованный текст:\n")
 
     text = replace_chars(text, " ", "и") #
     text = replace_chars(text, "Е", "о") #
@@ -146,19 +147,11 @@ def main():
     text = replace_chars(text, "А", "й")
     text = replace_chars(text, "В", "э")
 
-
-
+    #Замена в конце дабы исключить повторения символа " " в алфавите
     text = replace_chars(text, "Х", " ")
 
     print(text)
-
-
-
-
-
-    # Вывод результата
-    print("\n\n\n")
-    print("Измененный текст:")
+    print("\n")
 
 if __name__ == "__main__":
     main()
