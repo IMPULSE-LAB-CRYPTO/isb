@@ -143,7 +143,7 @@ def main():
     text = replace_chars(text, "Ь", "ж")
     text = replace_chars(text, "Л", "ф")
     text = replace_chars(text, "М", "х")
-    #text = replace_chars(text, "y", "ю")
+    text = replace_chars(text, "У", "ю")
 
     text = replace_chars(text, "Ю", "ц")
     text = replace_chars(text, "О", "ш")
