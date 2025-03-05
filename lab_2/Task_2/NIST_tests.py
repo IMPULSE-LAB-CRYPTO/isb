@@ -120,8 +120,13 @@ print("C++ Sequence:")
 print(f"Frequency Test p-value: {p_value_freq_cpp}")
 print(f"Runs Test p-value: {p_value_runs_cpp}")
 print(f"Longest Run of Ones Test p-value: {NEED_TO_CALCULATE_cpp}")
+#Проверил на калькуляторе:
+#Regularized upper incomplete gamma function: 0.63205382
+
 
 print("\nJava Sequence:")
 print(f"Frequency Test p-value: {p_value_freq_java}")
 print(f"Runs Test p-value: {p_value_runs_java}")
 print(f"Longest Run of Ones Test p-value: {NEED_TO_CALCULATE_java}")
+#Проверил на калькуляторе:
+#Regularized upper incomplete gamma function: 0.63205382
